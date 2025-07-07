@@ -31,7 +31,7 @@ buttons.forEach((eachButton) => {
         }
 
         if (countValue === 0) {
-            counter.style.color = '#222'
+            counter.style.color = '#222' 
         }
 
         counter.textContent = countValue;  
