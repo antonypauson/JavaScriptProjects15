@@ -56,9 +56,6 @@ allLinks.forEach((link) => {
 
         
         const position = element.offsetTop - navHeight;
-
-       
-
         window.scrollTo({
             left: 0, 
             top: position
