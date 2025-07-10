@@ -15,6 +15,7 @@ let editID = "";
 // ****** EVENT LISTENERS **********
 form.addEventListener('submit', addItem);
 clearButton.addEventListener("click", clearItems);
+window.addEventListener("DOMContentLoaded", setupItems);
 
 
 // ****** FUNCTIONS **********
@@ -30,6 +31,8 @@ function clearItems() {
     container.classList.remove('show-container');
     displayAlert("CLEARED ALL", "danger");
     setBackToDefault();
+    localStorage.removeItem('list');
+    
 }
 
 function addItem(event) {
@@ -38,28 +41,7 @@ function addItem(event) {
     const id = new Date().getTime().toString();
     
     if (value !== "" && !editFlag) { //not editing
-        const article = document.createElement("article");
-        article.classList.add("grocery-item");
-        const dataId = document.createAttribute("data-id");
-        dataId.value = id;
-        article.setAttributeNode(dataId);
-        article.innerHTML = `<p class="title">${value}</p>
-            <div class="btn-container">
-              <button class="edit-btn" type="button">
-                <i class="fas fa-edit"></i>
-              </button>
-              <button class="delete-btn" type="button">
-                <i class="fas fa-trash"></i>
-              </button>
-            </div>`;
-
-        const deleteButton = article.querySelector(".delete-btn");
-        const editButton = article.querySelector(".edit-btn");
-        
-        deleteButton.addEventListener("click", deleteItem);
-        editButton.addEventListener("click", editItem);
-        
-        list.appendChild(article);
+        createArticle(id, value);
         displayAlert('item added', 'success');
         container.classList.add('show-container');
 
@@ -67,9 +49,11 @@ function addItem(event) {
         setBackToDefault();
             
     } else if (value !== "" && editFlag) {
-        console.log("editing old stuff");
+        editElement.textContent = value; 
+        displayAlert('item edited', 'success');
+        editLocalStorage(editID, value);
+        setBackToDefault();
     } else {
-        console.log("input is empty");
         displayAlert("EMTPY INPUT", "danger");
     }
 }
@@ -91,9 +75,14 @@ function deleteItem(event) {
 }
 
 function editItem(event) {
-    console.log('edit button');
-    
+    const article = event.currentTarget.parentElement.parentElement; 
+    editElement = event.currentTarget.parentElement.previousElementSibling; //p tag
+    input.value = editElement.textContent; //formil ptag value
+    editFlag = true; 
+    editID = article.dataset.id; 
+    submitButton.textContent = 'Edit';
 }
+
 function setBackToDefault() {
     input.value = '';
     editFlag = false; 
@@ -113,10 +102,66 @@ function displayAlert(text, action) {
 }
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {
-    // console.log('added to local storage', id, value);
+    const obj = {id, value};
+    let items = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")): [];
+    items.push(obj);
+    localStorage.setItem("list", JSON.stringify(items));
 }
 
 function removeFromLocalStorage(id) {
+    let items = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+    items = items.filter((item) => {if (item.id !== id) return item});
+    localStorage.setItem("list", JSON.stringify(items));
+}
 
+function editLocalStorage(id, value) {
+    let items = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+    items = items.map((item) => {
+        if (item.id === id) {item.value = value}
+        return item; 
+    });
+    localStorage.setItem("list", JSON.stringify(items)); 
 }
 // ****** SETUP ITEMS **********
+// localStorage.setItem("orange", JSON.stringify(["first", "second"]));
+
+// const oranges = JSON.parse(localStorage.getItem("orange"));
+
+// console.log(oranges);
+
+function setupItems() {
+    let items = localStorage.getItem("list") ? JSON.parse(localStorage.getItem('list')):[];
+    
+    if (items.length > 0) {
+        items.forEach((each) => {
+            createArticle(each.id, each.value);
+        })
+        container.classList.add('show-container');
+        
+    }
+}
+
+function createArticle(id, value) {
+    const article = document.createElement("article");
+    article.classList.add("grocery-item");
+    const dataId = document.createAttribute("data-id");
+    dataId.value = id;
+    article.setAttributeNode(dataId);
+    article.innerHTML = `<p class="title">${value}</p>
+        <div class="btn-container">
+            <button class="edit-btn" type="button">
+            <i class="fas fa-edit"></i>
+            </button>
+            <button class="delete-btn" type="button">
+            <i class="fas fa-trash"></i>
+            </button>
+        </div>`;
+
+    const deleteButton = article.querySelector(".delete-btn");
+    const editButton = article.querySelector(".edit-btn");
+    
+    deleteButton.addEventListener("click", deleteItem);
+    editButton.addEventListener("click", editItem);
+    
+    list.appendChild(article);
+}
