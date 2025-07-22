@@ -5,7 +5,7 @@ const colors = ["salmon", "pink", "khaki", "red", "yellow", "grey", "violet", "m
 
 const button = document.querySelector(".btn");
 const mainSection = document.querySelector(".main-section");
-
+const span = document.querySelector(".color-name");
 
 button.addEventListener("click", randomColor);
 
@@ -16,6 +16,7 @@ function randomColor() {
     // console.log(computedStyles.backgroundColor);
     
     mainSection.style.backgroundColor = randColor; 
+    span.textContent = randColor; 
 }
 
 function getRandomNumber() {
