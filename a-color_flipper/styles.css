@@ -57,7 +57,7 @@ ul {
 
 
 .main-section {
-    background-color: gray;
+    background-color: red;
     width: 90vw; 
     margin: 0 auto; 
     /* border: 2px solid black; */
@@ -73,9 +73,7 @@ ul {
 h2 {
     font-size: 4rem;
 }
-.color-name {
-    background-color: blue;
-}
+
 
 .btn {
     text-transform: uppercase;
