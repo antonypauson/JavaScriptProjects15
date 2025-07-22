@@ -55,11 +55,37 @@ ul {
     list-style-type: none;
 }
 
-.main {
-    background-color: khaki;
+
+.main-section {
+    background-color: gray;
+    width: 90vw; 
+    margin: 0 auto; 
+    /* border: 2px solid black; */
+    min-height: calc(100vh - 5rem); 
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10rem;
 }
 
-.rhs {
-    display: flex;
-    gap: 12px; 
+h2 {
+    font-size: 4rem;
 }
+.color-name {
+    background-color: blue;
+}
+
+.btn {
+    text-transform: uppercase;
+    background: transparent;
+    color: black; 
+    font-weight: 700;
+    border: 2px solid white; 
+    color: white; 
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    cursor: pointer; 
+}
+
