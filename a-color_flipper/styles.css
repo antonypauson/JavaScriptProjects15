@@ -74,6 +74,9 @@ h2 {
     font-size: 4rem;
 }
 
+.color-name {
+    text-transform: uppercase;
+}
 
 .btn {
     text-transform: uppercase;
