@@ -1,0 +1,51 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+}
+.main-container {
+    background-color: khaki;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    height: 60rem;
+    max-width: 80%; 
+    margin: 10rem auto; 
+    border: 2px solid black; 
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+}
+
+#value {
+    font-size: 9rem; 
+    font-weight: 900;
+    /* margin-bottom: 2rem; */
+}
+
+h1 {
+    font-size: 7rem; 
+    margin-top: -10rem;
+}
+
+.btn {
+    text-transform: uppercase;
+    padding: 1.5rem 2.5rem; 
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.5rem;
+    border: 2px solid blue; 
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: maroon;
+    border-color: maroon;
+    color: white; 
+}
