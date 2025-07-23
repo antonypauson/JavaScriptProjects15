@@ -40,8 +40,18 @@ html {
     transform: scale(1.2);
 }
 
-#icon:hover {
+#icon:hover, #icon:visited {
     transform: rotate(45deg);
+}
+
+
+
+.list {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
 }
 
 .list a {
