@@ -119,3 +119,39 @@ h2 {
     width: 70%; 
     margin: 0 auto; 
 }
+
+.btn-container {
+    /* background-color: khaki; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -2rem;
+}
+
+.btn-ctrl {
+    cursor: pointer;
+}
+#prev-btn, #next-btn {
+    width: 5rem;  
+    height: 6rem; 
+}
+
+.random-btn {
+    color: orangered; 
+    background-color: aquamarine;
+    text-transform: capitalize;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer; 
+    padding: 1rem 2rem; 
+    margin-bottom: 3rem;
+    border-color: orangered;
+}
+
+.random-btn:hover {
+    background-color: orangered;
+    color: white; 
+}
+
+.btn-ctrl:hover {
+    transform: scale(1.2,1.3);
+}
