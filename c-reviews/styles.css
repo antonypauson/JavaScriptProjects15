@@ -1,0 +1,121 @@
+* {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title {
+    /* background-color: khaki; */
+    width: 80%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem 
+}
+
+h2 {
+    font-size: 5rem; 
+    text-transform: capitalize;
+    color: orange; 
+    letter-spacing: -0.1rem;
+}
+
+.underline {
+    background-color: rgb(241, 149, 9);
+    width: 10rem; 
+    height: 0.5rem; 
+    margin: 3rem auto; 
+}
+
+.card {
+    /* padding: 16rem 20rem;  */
+    height: 70vh; 
+    width: 60%; 
+    margin: 0 auto; 
+    /* background-color: salmon; */
+    display: flex; 
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 3rem; 
+    font-family: serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 60px 1px rgb(188, 197, 197);
+}
+
+.img-container {
+    margin-top: 4rem;
+    background-color: khaki;
+    width: 20rem; 
+    height: 20rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+.quote-container {
+    width: 4rem; 
+    height: 4rem; 
+    background-color: khaki;
+    border-radius: 50%;
+    position: absolute; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0; 
+}
+
+#person-img {
+    width: 100%; 
+    display: inline-block;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    right: 20px; 
+}
+
+#quote-img {
+    width: 2rem; 
+}
+
+#author {
+    font-weight: 700;
+    color: rgb(175, 164, 59); 
+    letter-spacing: -1px;
+    font-size: 2.8rem; 
+}
+
+#job {
+    color: orange; 
+    letter-spacing: 5px;
+    font-size: larger;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+#info {
+    letter-spacing: -1px;
+    font-weight: 200;
+    width: 70%; 
+    margin: 0 auto; 
+}
