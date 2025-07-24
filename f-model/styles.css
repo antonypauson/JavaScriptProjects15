@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+}
+
+
+.container {
+    background-color: rgb(158, 158, 223);
+    text-align: center; 
+    padding:  64px 0; 
+    letter-spacing: 4px;
+    font-size: 44px; 
+    font-family: 'Roboto', sans-serif; 
+    width: 90vw; 
+    max-width: 800px;
+    margin: 0 auto; 
+    margin-top: 10vh; 
+    border-radius: 22px;
+    box-shadow: 10px 10px 2px;
+    transition: 0.5s;
+}
+
+.container:hover {
+    box-shadow: -10px -10px 2px;
+}
+
+.btn {
+    margin-top: 32px; 
+    border: 2px solid rgb(158, 158, 223); 
+    padding: 8px 15px; 
+    border-radius: 10px;
+    font-size: 14px; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.6s ease-out;
+}
+
+.btn:hover, .btn:visited {
+    background-color: rgb(131, 98, 221);
+    color: white; 
+}
+
+.model {
+    background-color: rgb(157, 238, 8);
+    position: fixed; 
+    top: 20px; 
+    /* width: 100%;  */
+    /* text-align: center; */
+    /* border: 2px solid black;  */
+    margin-left: 50%;
+    padding: 4rem 24rem; 
+    transform: translate(-50%, 0%);
+    box-shadow: 5px 5px 10px 15px rgb(41, 104, 23);
+    visibility: hidden;
+}
+
+.show-model {
+    visibility: visible;
+    z-index: 5; 
+}
+
+.shrek {
+    display: inline-block;
+    width: 40rem; 
+    /* position: relative; */
+}
+
+.close {
+    /* background-color: blue; */
+    position: absolute;
+    width: 5rem; 
+    right: 10rem; 
+    transition: 0.5s;
+}
+
+.close:hover {
+    transform: rotate(180deg);
+}
