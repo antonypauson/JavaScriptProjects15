@@ -61,10 +61,11 @@ body {
     padding: 4rem 24rem; 
     transform: translate(-50%, 0%);
     box-shadow: 5px 5px 10px 15px rgb(41, 104, 23);
-    visibility: hidden;
+    display: none;
 }
 
 .show-model {
+    display: block;
     visibility: visible;
     z-index: 5; 
 }

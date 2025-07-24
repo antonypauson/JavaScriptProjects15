@@ -235,15 +235,19 @@ Questions
 .question-text {
   display: none;
 }
-.show-text .question-text {
+
+/* .show-text .question-text {
   display: block;
-}
-.minus-icon {
+} */
+
+/* .minus-icon {
   display: none;
-}
-.show-text .minus-icon {
+} */
+
+/* .show-text .minus-icon {
   display: inline;
-}
-.show-text .plus-icon {
+} */
+
+/* .show-text .plus-icon {
   display: none;
-}
+} */
